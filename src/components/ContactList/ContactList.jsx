@@ -7,7 +7,7 @@ const ContactList = ({ contacts, removeContact }) => {
     contacts.map(({ name, phone, id }) => {
       return (
         <li className={s.item} key={id}>
-          <p>
+          <p className={s.text}>
             {name}: {phone}
           </p>
           <button
@@ -21,7 +21,7 @@ const ContactList = ({ contacts, removeContact }) => {
       );
     });
 
-  return <ul>{elements}</ul>;
+  return <ul className={s.list}>{elements}</ul>;
 };
 
 export default ContactList;
