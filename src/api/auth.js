@@ -28,3 +28,14 @@ export const logout = async () => {
   setToken('');
   return result;
 };
+
+export const current = async token => {
+  try {
+    setToken(token);
+    const { data: result } = await instance.get('/users/current');
+    return result;
+  } catch (error) {
+    setToken('');
+    throw error;
+  }
+};
