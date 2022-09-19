@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 const ContactList = ({ contacts, removeContact }) => {
   const elements =
     contacts &&
-    contacts.map(({ name, phone, id }) => {
+    contacts.map(({ name, number, id }) => {
       return (
         <li className={s.item} key={id}>
           <p className={s.text}>
-            {name}: {phone}
+            {name}: {number}
           </p>
           <button
             type="button"
@@ -31,7 +31,7 @@ ContactList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      phone: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
   removeContact: PropTypes.func.isRequired,
